@@ -48,4 +48,8 @@ const props = defineProps({
   background-color: #292929;
   border-radius: 10px;
 }
+
+.setting-category:hover {
+  background-color: #323232;
+}
 </style>

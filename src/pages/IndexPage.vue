@@ -9,6 +9,7 @@ const games = $q.localStorage.getItem("games");
 
 <template>
   <TitleBar></TitleBar>
-
   <div>{{ games }}</div>
 </template>
+
+<style></style>
