@@ -1,8 +1,8 @@
-import { app, BrowserWindow, nativeTheme } from "electron";
+import { app, nativeTheme } from "electron";
 import { initialize, enable } from "@electron/remote/main";
 import path from "path";
 import os from "os";
-
+import { BrowserWindow } from "electron-acrylic-window";
 initialize();
 
 const platform = process.platform || os.platform();
@@ -43,6 +43,19 @@ function createWindow() {
   /**
    * Initial window options
    */
+  splash = new BrowserWindow({
+    width: 370,
+    height: 370,
+    transparent: true,
+    frame: false,
+    vibrancy: {
+      theme: "#00000000",
+      effect: "nil",
+    },
+    resizable: false,
+    alwaysOnTop: true,
+  });
+
   mainWindow = new BrowserWindow({
     icon: path.resolve(__dirname, "icons/icon.png"),
     width: 1000,
@@ -50,22 +63,17 @@ function createWindow() {
     minHeight: 600,
     minWidth: 1000,
     frame: false,
-    useContentSize: true,
+    vibrancy: {
+      theme: "#202020CC",
+      effect: "acrylic",
+    },
+    transparent: true,
     show: false,
     webPreferences: {
       contextIsolation: true,
       sandbox: false,
       preload: path.resolve(__dirname, process.env.QUASAR_ELECTRON_PRELOAD),
     },
-  });
-
-  splash = new BrowserWindow({
-    width: 370,
-    height: 370,
-    transparent: true,
-    frame: false,
-    resizable: false,
-    alwaysOnTop: true,
   });
 
   splash.loadFile(path.resolve(publicFolder, "splash/splash.html"));

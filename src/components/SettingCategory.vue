@@ -45,11 +45,11 @@ const props = defineProps({
   margin: 25px;
   user-select: none;
   padding: 15px;
-  background-color: #292929;
+  background-color: #29292999;
   border-radius: 10px;
 }
 
 .setting-category:hover {
-  background-color: #323232;
+  background-color: #32323299;
 }
 </style>
