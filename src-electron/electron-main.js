@@ -1,8 +1,7 @@
-import { app, nativeTheme } from "electron";
+import { app, nativeTheme, BrowserWindow, screen } from "electron";
 import { initialize, enable } from "@electron/remote/main";
 import path from "path";
 import os from "os";
-import { BrowserWindow } from "electron-acrylic-window";
 initialize();
 
 const platform = process.platform || os.platform();
@@ -48,10 +47,6 @@ function createWindow() {
     height: 370,
     transparent: true,
     frame: false,
-    vibrancy: {
-      theme: "#00000000",
-      effect: "nil",
-    },
     resizable: false,
     alwaysOnTop: true,
   });
@@ -62,12 +57,10 @@ function createWindow() {
     height: 600,
     minHeight: 600,
     minWidth: 1000,
+    maxHeight: screen.getPrimaryDisplay().workAreaSize.height,
+    maxWidth: screen.getPrimaryDisplay().workAreaSize.width,
+    roundedCorners: true,
     frame: false,
-    vibrancy: {
-      theme: "#202020CC",
-      effect: "acrylic",
-    },
-    transparent: true,
     show: false,
     webPreferences: {
       contextIsolation: true,
@@ -77,11 +70,16 @@ function createWindow() {
   });
 
   splash.loadFile(path.resolve(publicFolder, "splash/splash.html"));
+
   splash.show();
 
   mainWindow.once("ready-to-show", () => {
     splash.destroy();
     mainWindow.show();
+  });
+
+  mainWindow.on("move", (event) => {
+    mainWindow.webContents.send("winPosition", mainWindow.getPosition());
   });
 
   enable(mainWindow.webContents);

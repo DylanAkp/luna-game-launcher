@@ -29,21 +29,11 @@ contextBridge.exposeInMainWorld("utilsSettings", {
   },
 });
 
-contextBridge.exposeInMainWorld("micaUtils", {
-  movedWindow() {
-    const currentWindow = electron.remote.getFocusedWindow();
-
-    currentWindow.on("move", function () {
-      console.log("moved");
-    });
-  },
+contextBridge.exposeInMainWorld("getWindowPosition", () => {
+  return BrowserWindow.getFocusedWindow().getPosition();
 });
 
-mainWindow.on("move", function () {
-  console.log("moved");
-});
-
-contextBridge.exposeInMainWorld("popUpUtils", {
+/*contextBridge.exposeInMainWorld("popUpUtils", {
   addGame() {
     popup = new BrowserWindow({
       width: 500,
@@ -69,4 +59,4 @@ contextBridge.exposeInMainWorld("popUpUtils", {
       popup.destroy();
     });
   },
-});
+});*/
