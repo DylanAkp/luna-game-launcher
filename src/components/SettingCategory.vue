@@ -43,7 +43,6 @@ const props = defineProps({
   flex-direction: column;
   gap: 20px;
   margin: 25px;
-  user-select: none;
   padding: 15px;
   background-color: #29292999;
   border-radius: 10px;

@@ -1,7 +1,6 @@
 <script setup>
 import TitleBarButton from "../components/TitleBarButton.vue";
 import { useRoute, useRouter } from "vue-router";
-import router from "src/router";
 
 const $route = useRoute();
 const $router = useRouter();
@@ -27,7 +26,7 @@ function closeApp() {
 function openSettings() {
   if (process.env.MODE === "electron") {
     if ($route.path == "/") $router.push("/settings");
-    else $router.push("/");
+    else $router.back();
   }
 }
 </script>
@@ -78,6 +77,5 @@ function openSettings() {
   color: white;
   -webkit-app-region: drag;
   font-family: "Segoe UI Variable Text", "Segoe UI";
-  user-select: none;
 }
 </style>

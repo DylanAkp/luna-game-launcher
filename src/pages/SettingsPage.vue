@@ -2,10 +2,19 @@
 import SettingButton from "../components/SettingButton.vue";
 import SettingCategory from "../components/SettingCategory.vue";
 import TitleBar from "../components/TitleBar.vue";
+import { useRouter } from "vue-router";
+
+const $router = useRouter();
 
 function reportIssues() {
   if (process.env.MODE === "electron") {
     window.utilsSettings.reportIssues();
+  }
+}
+
+function addGame() {
+  if (process.env.MODE === "electron") {
+    $router.push("/addgame");
   }
 }
 </script>
@@ -17,7 +26,7 @@ function reportIssues() {
       <div class="interline">
         This button allows you to add games to your library
       </div>
-      <SettingButton>Add Game</SettingButton>
+      <SettingButton @click="addGame()">Add Game</SettingButton>
       <div class="interline">Remove all games from your library</div>
       <SettingButton>Reset library</SettingButton>
     </div>

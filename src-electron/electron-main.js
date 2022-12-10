@@ -1,5 +1,7 @@
-import { app, nativeTheme, BrowserWindow, screen } from "electron";
+import { app, nativeTheme, screen } from "electron";
 import { initialize, enable } from "@electron/remote/main";
+const { BrowserWindow } = require("electron-acrylic-window");
+
 import path from "path";
 import os from "os";
 initialize();
@@ -57,9 +59,14 @@ function createWindow() {
     height: 600,
     minHeight: 600,
     minWidth: 1000,
+    transparent: true,
     maxHeight: screen.getPrimaryDisplay().workAreaSize.height,
     maxWidth: screen.getPrimaryDisplay().workAreaSize.width,
     roundedCorners: true,
+    vibrancy: {
+      theme: "dark",
+      effect: "acrylic",
+    },
     frame: false,
     show: false,
     webPreferences: {
@@ -76,10 +83,6 @@ function createWindow() {
   mainWindow.once("ready-to-show", () => {
     splash.destroy();
     mainWindow.show();
-  });
-
-  mainWindow.on("move", (event) => {
-    mainWindow.webContents.send("winPosition", mainWindow.getPosition());
   });
 
   enable(mainWindow.webContents);

@@ -16,6 +16,10 @@ const routes = [
         path: "tray",
         component: () => import("src/pages/TrayMenu.vue"),
       },
+      {
+        path: "addgame",
+        component: () => import("src/pages/AddGame.vue"),
+      },
     ],
   },
 
