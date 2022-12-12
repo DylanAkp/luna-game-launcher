@@ -24,7 +24,7 @@ if (games == undefined) $q.localStorage.set("games", []);
 .container {
   width: 100vw;
   height: 100vh;
-  background-color: #20202099;
+  background-color: #202124;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;

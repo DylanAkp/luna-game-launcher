@@ -42,6 +42,6 @@ const props = defineProps({
   padding-top: 5px;
   padding-bottom: 5px;
   color: black;
-  border-radius: 5px;
+  border-radius: 15px;
 }
 </style>

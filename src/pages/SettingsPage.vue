@@ -1,6 +1,6 @@
 <script setup>
-import SettingButton from "../components/SettingButton.vue";
-import SettingCategory from "../components/SettingCategory.vue";
+import SettingButton from "../components/WinButton.vue";
+import SettingCategory from "../components/WinCategory.vue";
 import TitleBar from "../components/TitleBar.vue";
 import { useRouter } from "vue-router";
 

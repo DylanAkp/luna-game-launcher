@@ -1,6 +1,6 @@
 <script setup>
 import TitleBar from "../components/TitleBar.vue";
-import Button from "../components/SettingButton.vue";
+import Button from "../components/WinButton.vue";
 import { useQuasar } from "quasar";
 import { useRouter } from "vue-router";
 
