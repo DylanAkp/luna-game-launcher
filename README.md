@@ -1,3 +1,7 @@
+## 🔧 Status
+
+Work in Progress
+
 ## ❓ Why ?
 
 I'm tired of looking for the right game launcher for a specific game or for the right shortcut each time I want to start a game, and actually, someone told me to work before playing, so I decided to create Luna Game Launcher.
