@@ -8,7 +8,7 @@ I'm tired of looking for the right game launcher for a specific game or for the 
 
 ## 🌒 What is Luna Game Launcher ?
 
-Luna Game Launcher is a simple game launcher following the Windows 11 theme.
+Luna Game Launcher is a simple game launcher.
 It has been made to be minimalist, clean and intuitive.
 You can add all your games and stop opening Steam, uPlay and Epic Game Launcher just to realize minesweeper shortcut was on your desktop.
 
