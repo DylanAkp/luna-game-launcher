@@ -1,6 +1,7 @@
 ## 🔧 Status
 
 Work in Progress
+While waiting for a release, I suggest you to try [Playnite](https://github.com/JosefNemec/Playnite/)
 
 ## ❓ Why ?
 
